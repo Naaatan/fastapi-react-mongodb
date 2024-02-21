@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.70.0"
+uvicorn = "==0.14.0"
+fastapi-csrf-protect = "==0.2.1"
+motor = "==3.3.2"
+pyjwt = "==2.3.0"
+passlib = "==1.7.4"
+python-decouple = "==3.3"
+dnspython = "==2.1.0"
+gunicorn = "==20.1.0"
+bcrypt = "==3.2.0"
+
+[dev-packages]
+black = "*"
+isort = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.2"
