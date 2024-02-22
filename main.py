@@ -18,7 +18,7 @@ origins = ["http://localhost:3000"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credential=True,
+    allow_credentials=True,  # 正しい引数名に修正
     allow_methods=["*"],
     allow_headers=["*"],
 )
