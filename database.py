@@ -1,3 +1,5 @@
+import asyncio
+
 import motor.motor_asyncio
 from bson import ObjectId
 from decouple import config
@@ -10,6 +12,7 @@ MONGO_API_KEY = config("MONGO_API_KEY")
 
 # Connect to the database
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_API_KEY)
+client.get_io_loop = asyncio.get_event_loop
 
 # database
 db = client.API_DB

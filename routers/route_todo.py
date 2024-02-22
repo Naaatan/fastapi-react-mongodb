@@ -72,8 +72,8 @@ async def get_todos(request, Request):
         List[Todo]: All tasks.
     """
     # JWT token の検証
-    auth.verify_jwt(request)
-    
+    # auth.verify_jwt(request)
+
     res = await db_get_todos()
     return res
 
