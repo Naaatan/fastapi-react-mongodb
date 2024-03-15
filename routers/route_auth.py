@@ -52,7 +52,7 @@ async def login(request: Request, response: Response, user: UserBody, csrf_prote
 
 
 @router.post("/api/logout", response_model=SuccessMsg)
-def logout(request, Request, response: Response, csrf_protect: CsrfProtect = Depends()):
+def logout(request: Request, response: Response, csrf_protect: CsrfProtect = Depends()):
     # CSRF token をヘッダーから取得
     csrf_token = csrf_protect.get_csrf_from_headers(request.headers)
     # CSRF token を検証
@@ -66,7 +66,7 @@ def logout(request, Request, response: Response, csrf_protect: CsrfProtect = Dep
         secure=AuthJwtCsrf.secure,
         samesite=AuthJwtCsrf.samesite,
     )
-    
+
     msg = SuccessMsg(message="Successfully logged-out")
     return jsonable_encoder(msg)
 
